@@ -1,18 +1,18 @@
 {
     "private": true,
     "scripts": {
-        "test": "mocha --timeout 1000000000 --require ts-node/register test/**/*.ts"
+        "test": "mocha --timeout 1000000000 --parallel --require ts-node/register test/**/*.ts"
     },
     "devDependencies": {
-        "@types/chai": "latest",
-        "@types/mocha": "latest",
-        "@types/node": "latest",
-        "@types/selenium-webdriver": "latest",
-        "chai": "latest",
+        "@types/chai": "^4.3.9",
+        "@types/mocha": "^10.0.3",
+        "@types/node": "^20.8.7",
+        "@types/selenium-webdriver": "^4.1.19",
+        "chai": "^4.3.10",
+        "mocha": "^10.2.0",
         "chromedriver": "latest",
-        "mocha": "latest",
         "selenium-webdriver": "latest",
-        "ts-node": "latest",
-        "typescript": "latest"
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
     }
 }
