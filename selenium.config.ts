@@ -6,7 +6,7 @@ export function getChromeCapabilities() {
     capabilities.set('goog:chromeOptions', {
         args: [
             // '--lang=ru',
-            // '--disable-gpu',
+            '--disable-gpu',
             '--headless=new',
             ' --no-sandbox'
         ]
