@@ -7,7 +7,8 @@ export function getChromeCapabilities() {
         args: [
             // '--lang=ru',
             // '--disable-gpu',
-            '--headless=new'
+            '--headless=new',
+            ' --no-sandbox'
         ]
     });
     return capabilities;
