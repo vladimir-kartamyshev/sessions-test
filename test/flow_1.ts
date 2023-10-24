@@ -1,7 +1,7 @@
 import { Builder, until } from 'selenium-webdriver';
 import { getChromeCapabilities } from '../selenium.config';
 
-const url = 'http://user@dev-test/staging/app-debug/';
+const url = 'https://user@demo.loginom.ru/app/';
 
 const countSessions = 200;
 const durationCheckSessionsInSeconds = 100000;
