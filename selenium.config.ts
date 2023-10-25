@@ -8,7 +8,8 @@ export function getChromeCapabilities() {
             // '--lang=ru',
             '--disable-gpu',
             '--headless=new',
-            ' --no-sandbox'
+            ' --no-sandbox',
+            '--window-size=1024,768'
         ]
     });
     return capabilities;
