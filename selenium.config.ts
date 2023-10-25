@@ -5,11 +5,9 @@ export function getChromeCapabilities() {
 
     capabilities.set('goog:chromeOptions', {
         args: [
-            // '--lang=ru',
             '--disable-gpu',
             '--headless=new',
             ' --no-sandbox',
-            '--window-size=1024,768'
         ]
     });
     return capabilities;
