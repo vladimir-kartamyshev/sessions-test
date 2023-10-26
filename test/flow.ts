@@ -1,7 +1,7 @@
 import { Builder, until } from 'selenium-webdriver';
 import { getChromeCapabilities } from '../selenium.config';
 
-const url = 'https://www.google.com/';
+const url = 'http://user@dev-test/staging/app-debug/';
 
 const countSessions = 5;
 const durationCheckSessionsInSeconds = 60;
