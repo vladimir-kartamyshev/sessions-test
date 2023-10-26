@@ -1,7 +1,8 @@
 import { Builder, until } from 'selenium-webdriver';
 import { getChromeCapabilities } from '../selenium.config';
 
-const url = 'http://user@dev-test/staging/app-debug/';
+const url = 'http://user@dev-test/staging/app/';
+const title = 'Начало · Loginom';
 
 const countSessions = 5;
 const durationCheckSessionsInSeconds = 60;
@@ -14,7 +15,6 @@ async function CheckTabs(driver, duration: number, totalRuntimeSeconds: number) 
   while ((new Date().getTime() - startTime) / 1000 < totalRuntimeSeconds) {
     for (let i = 0; i < tabs.length; i++) {
       await driver.switchTo().window(tabs[i]);
-      const title = 'Google';
       await driver.wait(until.titleIs(title), duration);
       iterationCount++;
       if (iterationCount % 20 === 0) {
@@ -33,7 +33,6 @@ it('', async () => {
   await driver.get(url);
   for (let i = 0; i < countSessions; i++) {
           driver.executeScript(`window.open("${url}")`);
-          const title = 'Google';
           await driver.wait(until.titleIs(title), 180000);
           console.log(`Поток 0, сессия ${i} открыта`);
         }
