@@ -1,7 +1,7 @@
 import { Builder, until } from 'selenium-webdriver';
 import { getChromeCapabilities } from '../selenium.config';
 
-const url = 'https://google.com/';
+const url = 'http://user@dev-test/staging/app-debug/';
 
 const countSessions = 5;
 const durationCheckSessionsInSeconds = 60;
@@ -31,8 +31,8 @@ async function CheckTabs(driver, duration: number, totalRuntimeSeconds: number) 
 it('', async () => {
   const driver = new Builder().withCapabilities(getChromeCapabilities()).build();
   await driver.get(url);
-        for (let i = 0; i < countSessions; i++) {
-          driver.executeScript('window.open("https://google.com/")');
+  for (let i = 0; i < countSessions; i++) {
+          driver.executeScript(`window.open("${url}")`);
           const title = 'Google';
           await driver.wait(until.titleIs(title), 180000);
           console.log(`Поток 0, сессия ${i} открыта`);
