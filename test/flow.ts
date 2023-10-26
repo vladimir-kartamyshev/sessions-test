@@ -2,7 +2,7 @@ import { Builder, until } from 'selenium-webdriver';
 import { getChromeCapabilities } from '../selenium.config';
 
 const url = 'http://user@dev-test/staging/app/';
-const title = 'Начало · Loginom';
+const title = 'Loginom';
 
 const countSessions = 50;
 const durationCheckSessionsInSeconds = 60;
