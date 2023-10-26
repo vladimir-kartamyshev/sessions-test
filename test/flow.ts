@@ -4,7 +4,7 @@ import { getChromeCapabilities } from '../selenium.config';
 const url = 'http://user@dev-test/staging/app/';
 const title = 'Начало · Loginom';
 
-const countSessions = 5;
+const countSessions = 50;
 const durationCheckSessionsInSeconds = 60;
 
 
@@ -19,6 +19,7 @@ async function CheckTabs(driver, duration: number, totalRuntimeSeconds: number) 
       iterationCount++;
       if (iterationCount % 20 === 0) {
       console.log(`Сессии живы, продолжаю наблюдение`);
+      console.log(url);
       }
       if ((new Date().getTime() - startTime) / 1000 >= totalRuntimeSeconds) {
         break; // Прерывание цикла, если общее время выполнения функции истекло
