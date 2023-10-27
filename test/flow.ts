@@ -1,16 +1,16 @@
+
 import { Builder, until } from 'selenium-webdriver';
 import { getChromeCapabilities } from '../selenium.config';
 
-const url = 'http://user@dev-test/staging/app/';
-const title = 'Loginom';
+const url = process.env.URL || 'http://user@dev-test/staging/app/';
+const title = process.env.TITLE || 'Loginom';
+const countSessions = Number(process.env.COUNT_SESSIONS) || 50;
 
-const countSessions = 50;
 const durationCheckSessionsInSeconds = 60;
-
 
 async function CheckTabs(driver, duration: number, totalRuntimeSeconds: number) {
   const tabs = await driver.getAllWindowHandles();
-  const startTime = new Date().getTime(); // Время начала выполнения функции в миллисекундах
+  const startTime = new Date().getTime();
   let iterationCount = 0;
   while ((new Date().getTime() - startTime) / 1000 < totalRuntimeSeconds) {
     for (let i = 0; i < tabs.length; i++) {
@@ -22,12 +22,11 @@ async function CheckTabs(driver, duration: number, totalRuntimeSeconds: number) 
       console.log(url);
       }
       if ((new Date().getTime() - startTime) / 1000 >= totalRuntimeSeconds) {
-        break; // Прерывание цикла, если общее время выполнения функции истекло
+        break;
       }
     }
   }
 }
-
 
 it('', async () => {
   const driver = new Builder().withCapabilities(getChromeCapabilities()).build();
