@@ -1,6 +1,7 @@
 
 import { Builder, until } from 'selenium-webdriver';
 import { getChromeCapabilities } from '../selenium.config';
+import commandLineArgs, { OptionDefinition } from 'command-line-args';
 
 const url = process.env.URL || 'http://user@dev-test/staging/app/';
 const title = process.env.TITLE || 'Loginom';
