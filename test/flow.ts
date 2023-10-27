@@ -3,8 +3,8 @@ import { Builder, until } from 'selenium-webdriver';
 import { getChromeCapabilities } from '../selenium.config';
 import commandLineArgs, { OptionDefinition } from 'command-line-args';
 
-const url = process.env.URL || 'http://user@dev-test/staging/app/';
-const title = process.env.TITLE || 'Loginom';
+const url = process.env.URL || 'http://user@dev-test/staging/app-debug/';
+const title = process.env.TITLE || 'Начало · Loginom';
 const countSessions = Number(process.env.COUNT_SESSIONS) || 50;
 
 const durationCheckSessionsInSeconds = 60;
